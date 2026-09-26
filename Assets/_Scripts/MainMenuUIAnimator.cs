@@ -17,8 +17,6 @@ public class MainMenuAnimator : MonoBehaviour
 
     private void Awake()
     {
-        // Save original positions
-
         gameNameFinalPosition =
             gameName.anchoredPosition;
 
@@ -34,7 +32,6 @@ public class MainMenuAnimator : MonoBehaviour
         gameNameFinalScale =
             gameName.localScale;
 
-        // Move objects outside the screen
 
         gameName.anchoredPosition =
             new Vector2(

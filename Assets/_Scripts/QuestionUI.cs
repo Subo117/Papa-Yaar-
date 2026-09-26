@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using Unity.VisualScripting;
 
 public class QuestionUI : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class QuestionUI : MonoBehaviour
 
     public GameObject GamePanel;
     public GameObject resultPanel;
+    public GameObject pausePanel;
     public TMP_Text finalScoreText;
 
     private bool isAnimating = false;
@@ -26,6 +28,7 @@ public class QuestionUI : MonoBehaviour
     {
         GamePanel.SetActive(true);
         resultPanel.SetActive(false);
+        pausePanel.SetActive(false);
 
         gameManager.StartGame();
 
@@ -94,6 +97,7 @@ public class QuestionUI : MonoBehaviour
         {
             return;
         }
+        AudioManager.Instance.PlayAudio();
 
         StartCoroutine(ProcessAnswer(optionIndex));
     }
@@ -129,8 +133,6 @@ public class QuestionUI : MonoBehaviour
             gameManager.GetScore()
         );
 
-        // FIRST: move current question outside
-
         yield return StartCoroutine(
             gameUIAnimator.PlayExitAnimation()
         );
@@ -143,7 +145,6 @@ public class QuestionUI : MonoBehaviour
 
         if (gameManager.HasMoreQuestions())
         {
-            // Load new question while everything is outside
 
             ShowQuestion();
 
@@ -195,6 +196,8 @@ public class QuestionUI : MonoBehaviour
 
     public void RestartGame()
     {
+        AudioManager.Instance.PlayAudio();
+
         GamePanel.SetActive(true);
         resultPanel.SetActive(false);
 
@@ -224,6 +227,24 @@ public class QuestionUI : MonoBehaviour
 
     public void MainMenu()
     {
+        AudioManager.Instance.PlayAudio();
+
         UnityEngine.SceneManagement.SceneManager.LoadScene("Main Menu");
+    }
+
+    public void PauseGame()
+    {
+        AudioManager.Instance.PlayAudio();
+
+        GamePanel.SetActive(false);
+        pausePanel.SetActive(true);
+    }
+
+    public void ResumeGame()
+    {
+        AudioManager.Instance.PlayAudio();
+
+        pausePanel.SetActive(false);
+        GamePanel.SetActive(true);
     }
 }
