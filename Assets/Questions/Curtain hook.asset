@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 205d56d76f88bb84996ca22f33c362e0, type: 3}
-  m_Name: Bulb Not Working
+  m_Name: Curtain hook
   m_EditorClassIdentifier: Assembly-CSharp::QuestionData
-  itemImage: {fileID: -1328020039774297929, guid: 62620f3e904a68f4bb7366f2423d7ce2, type: 3}
-  questionText: Papa, bulb nahi chal raha!
+  itemImage: {fileID: 8301961774509548615, guid: e47f68266d0029444a2621af01b97f5c, type: 3}
+  questionText: Papa, parda phat gaya!
   options:
-  - optionText: Time to do operation of bulb
-    score: 5
-  - optionText: Buy a new bulb
-    score: 1
-  - optionText: Replace the bulb
+  - optionText: Let it be
     score: 3
+  - optionText: Stich it with cloth hanger
+    score: 5
+  - optionText: Buy new Parda
+    score: 1

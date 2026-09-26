@@ -17,45 +17,23 @@ public class MainMenuAnimator : MonoBehaviour
 
     private void Awake()
     {
-        gameNameFinalPosition =
-            gameName.anchoredPosition;
+        gameNameFinalPosition = gameName.anchoredPosition;
 
-        playFinalPosition =
-            playButton.anchoredPosition;
+        playFinalPosition = playButton.anchoredPosition;
 
-        quitFinalPosition =
-            quitButton.anchoredPosition;
+        quitFinalPosition = quitButton.anchoredPosition;
 
-        boyFinalPosition =
-            boy.anchoredPosition;
+        boyFinalPosition = boy.anchoredPosition;
 
-        gameNameFinalScale =
-            gameName.localScale;
+        gameNameFinalScale = gameName.localScale;
 
+        gameName.anchoredPosition = new Vector2(-1500, gameNameFinalPosition.y);
 
-        gameName.anchoredPosition =
-            new Vector2(
-                -1500,
-                gameNameFinalPosition.y
-            );
+        playButton.anchoredPosition = new Vector2(-1500, playFinalPosition.y);
 
-        playButton.anchoredPosition =
-            new Vector2(
-                -1500,
-                playFinalPosition.y
-            );
+        quitButton.anchoredPosition = new Vector2(quitFinalPosition.x, -700);
 
-        quitButton.anchoredPosition =
-            new Vector2(
-                quitFinalPosition.x,
-                -700
-            );
-
-        boy.anchoredPosition =
-            new Vector2(
-                1500,
-                boyFinalPosition.y
-            );
+        boy.anchoredPosition = new Vector2(1500, boyFinalPosition.y);
     }
 
     private void Start()
@@ -65,47 +43,21 @@ public class MainMenuAnimator : MonoBehaviour
 
     IEnumerator PlayMenuAnimation()
     {
-        // Game Name
-
-        LeanTween.move(
-            gameName,
-            gameNameFinalPosition,
-            0.9f
-        ).setEaseOutBack();
+        LeanTween.move(gameName, gameNameFinalPosition, 0.9f).setEaseOutBack();
 
         yield return new WaitForSeconds(0.25f);
 
-        // Boy
-
-        LeanTween.move(
-            boy,
-            boyFinalPosition,
-            0.9f
-        ).setEaseOutBack();
+        LeanTween.move(boy, boyFinalPosition, 0.9f).setEaseOutBack();
 
         yield return new WaitForSeconds(0.25f);
 
-        // Play Button
-
-        LeanTween.move(
-            playButton,
-            playFinalPosition,
-            0.8f
-        ).setEaseOutBack();
+        LeanTween.move(playButton, playFinalPosition, 0.8f).setEaseOutBack();
 
         yield return new WaitForSeconds(0.2f);
 
-        // Quit Button
-
-        LeanTween.move(
-            quitButton,
-            quitFinalPosition,
-            0.8f
-        ).setEaseOutBack();
+        LeanTween.move(quitButton, quitFinalPosition, 0.8f).setEaseOutBack();
 
         yield return new WaitForSeconds(0.8f);
-
-        // Start breathing animation
 
         StartBreathingAnimation();
     }
@@ -114,12 +66,6 @@ public class MainMenuAnimator : MonoBehaviour
     {
         gameName.localScale = gameNameFinalScale;
 
-        LeanTween.scale(
-            gameName.gameObject,
-            gameNameFinalScale * 1.06f,
-            1.2f
-        )
-        .setEaseInOutSine()
-        .setLoopPingPong();
+        LeanTween.scale(gameName.gameObject, gameNameFinalScale * 1.06f, 1.2f).setEaseInOutSine().setLoopPingPong();
     }
 }

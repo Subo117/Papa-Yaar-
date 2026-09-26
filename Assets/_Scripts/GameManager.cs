@@ -43,8 +43,6 @@ public class GameManager : MonoBehaviour
         currentQuestionIndex = 0;
         jugaduScore = 0;
 
-        Debug.Log("Game started with " + selectedQuestions.Count + " questions.");
-
         questionUI.PlayFirstQuestion();
 
     }

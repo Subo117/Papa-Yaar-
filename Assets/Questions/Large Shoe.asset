@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 205d56d76f88bb84996ca22f33c362e0, type: 3}
-  m_Name: Bulb Not Working
+  m_Name: Large Shoe
   m_EditorClassIdentifier: Assembly-CSharp::QuestionData
-  itemImage: {fileID: -1328020039774297929, guid: 62620f3e904a68f4bb7366f2423d7ce2, type: 3}
-  questionText: Papa, bulb nahi chal raha!
+  itemImage: {fileID: -3209568389492100442, guid: 294b61424d320ee469ace7c021162066, type: 3}
+  questionText: Papa, joota bada hai!
   options:
-  - optionText: Time to do operation of bulb
-    score: 5
-  - optionText: Buy a new bulb
-    score: 1
-  - optionText: Replace the bulb
+  - optionText: Replace it
     score: 3
+  - optionText: Use extra sole
+    score: 5
+  - optionText: Throw it
+    score: 1

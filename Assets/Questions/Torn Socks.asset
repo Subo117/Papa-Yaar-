@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 205d56d76f88bb84996ca22f33c362e0, type: 3}
-  m_Name: Bulb Not Working
+  m_Name: Torn Socks
   m_EditorClassIdentifier: Assembly-CSharp::QuestionData
-  itemImage: {fileID: -1328020039774297929, guid: 62620f3e904a68f4bb7366f2423d7ce2, type: 3}
-  questionText: Papa, bulb nahi chal raha!
+  itemImage: {fileID: -1976466997711170374, guid: 82e0a83db816b52479fbe7172615d9f7, type: 3}
+  questionText: Papa, socks phat gaya!
   options:
-  - optionText: Time to do operation of bulb
-    score: 5
-  - optionText: Buy a new bulb
+  - optionText: Buy new one
     score: 1
-  - optionText: Replace the bulb
+  - optionText: Stich it
+    score: 5
+  - optionText: Wear two in one legs
     score: 3

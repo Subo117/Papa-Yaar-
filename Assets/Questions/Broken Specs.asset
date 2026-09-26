@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 205d56d76f88bb84996ca22f33c362e0, type: 3}
-  m_Name: Bulb Not Working
+  m_Name: Broken Specs
   m_EditorClassIdentifier: Assembly-CSharp::QuestionData
-  itemImage: {fileID: -1328020039774297929, guid: 62620f3e904a68f4bb7366f2423d7ce2, type: 3}
-  questionText: Papa, bulb nahi chal raha!
+  itemImage: {fileID: 7839076466642290807, guid: b743afd62f1a49b4da5857cedfe43372, type: 3}
+  questionText: Papa, chashme ka handle toot gaya!
   options:
-  - optionText: Time to do operation of bulb
-    score: 5
-  - optionText: Buy a new bulb
+  - optionText: Buy new Specs
     score: 1
-  - optionText: Replace the bulb
+  - optionText: Replace handle
     score: 3
+  - optionText: Use rubber band
+    score: 5

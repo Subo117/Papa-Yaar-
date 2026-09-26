@@ -41,24 +41,19 @@ public class QuestionUI : MonoBehaviour
 
         if (question == null)
         {
-            Debug.LogError("No current question found.");
             return;
         }
 
         itemImage.sprite = question.itemImage;
         questionText.text = question.questionText;
 
-        questionNumberText.text =
-            gameManager.GetQuestionNumber() +
-            " / " +
-            gameManager.questionsPerGame;
+        questionNumberText.text = gameManager.GetQuestionNumber() + " / " + gameManager.questionsPerGame;
 
         for (int i = 0; i < optionButtons.Length; i++)
         {
             int optionIndex = i;
 
-            optionTexts[i].text =
-                question.options[i].optionText;
+            optionTexts[i].text = question.options[i].optionText;
 
             optionButtons[i].onClick.RemoveAllListeners();
 
@@ -82,9 +77,7 @@ public class QuestionUI : MonoBehaviour
 
         SetButtonsInteractable(false);
 
-        yield return StartCoroutine(
-            gameUIAnimator.PlayEnterAnimation()
-        );
+        yield return StartCoroutine(gameUIAnimator.PlayEnterAnimation());
 
         SetButtonsInteractable(true);
 
@@ -108,51 +101,28 @@ public class QuestionUI : MonoBehaviour
 
         SetButtonsInteractable(false);
 
-        QuestionData question =
-            gameManager.GetCurrentQuestion();
+        QuestionData question = gameManager.GetCurrentQuestion();
 
         if (question == null)
         {
             yield break;
         }
 
-        int score =
-            question.options[optionIndex].score;
+        int score = question.options[optionIndex].score;
 
         gameManager.AddScore(score);
 
-        Debug.Log(
-            "Selected: " +
-            question.options[optionIndex].optionText
-        );
-
-        Debug.Log("Score: " + score);
-
-        Debug.Log(
-            "Total Score: " +
-            gameManager.GetScore()
-        );
-
-        yield return StartCoroutine(
-            gameUIAnimator.PlayExitAnimation()
-        );
+        yield return StartCoroutine(gameUIAnimator.PlayExitAnimation());
 
         yield return new WaitForSeconds(0.5f);
-
-        // THEN move to next question
 
         gameManager.NextQuestion();
 
         if (gameManager.HasMoreQuestions())
         {
-
             ShowQuestion();
 
-            // Bring new question inside
-
-            yield return StartCoroutine(
-                gameUIAnimator.PlayEnterAnimation()
-            );
+            yield return StartCoroutine(gameUIAnimator.PlayEnterAnimation());
 
             SetButtonsInteractable(true);
 
@@ -160,27 +130,14 @@ public class QuestionUI : MonoBehaviour
         }
         else
         {
-            Debug.Log("All questions completed!");
-
-            Debug.Log(
-                gameManager.GetScore() +
-                " / " +
-                5 * gameManager.questionsPerGame
-            );
-
             GamePanel.SetActive(false);
             resultPanel.SetActive(true);
 
-            finalScoreText.text =
-                gameManager.GetScore() +
-                " / " +
-                5 * gameManager.questionsPerGame;
+            finalScoreText.text = gameManager.GetScore() + " / " + 5 * gameManager.questionsPerGame;
 
             yield return new WaitForSeconds(0.2f);
 
-            yield return StartCoroutine(
-                resultUIAnimator.PlayResultAnimation()
-            );
+            yield return StartCoroutine(resultUIAnimator.PlayResultAnimation());
 
             isAnimating = false;
         }
@@ -216,9 +173,7 @@ public class QuestionUI : MonoBehaviour
 
         ShowQuestion();
 
-        yield return StartCoroutine(
-            gameUIAnimator.PlayEnterAnimation()
-        );
+        yield return StartCoroutine(gameUIAnimator.PlayEnterAnimation());
 
         SetButtonsInteractable(true);
 
