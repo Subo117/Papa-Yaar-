@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
 
         Debug.Log("Game started with " + selectedQuestions.Count + " questions.");
 
-        questionUI.ShowQuestion();
+        questionUI.PlayFirstQuestion();
 
     }
 

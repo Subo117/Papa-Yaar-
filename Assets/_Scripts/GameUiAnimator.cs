@@ -15,7 +15,7 @@ public class GameUIAnimator : MonoBehaviour
 
     private Vector2[] optionFinalPositions;
 
-    void Awake()
+    private void Awake()
     {
         boyFinalPosition = boy.anchoredPosition;
         itemFinalPosition = item.anchoredPosition;
@@ -27,19 +27,10 @@ public class GameUIAnimator : MonoBehaviour
         {
             optionFinalPositions[i] = optionButtons[i].anchoredPosition;
         }
-
-        Debug.Log("Position set");
     }
 
-    void Start()
+    public IEnumerator PlayEnterAnimation()
     {
-        Debug.Log("Coroutine starting");
-        StartCoroutine(PlayIntroAnimation());
-    }
-
-    IEnumerator PlayIntroAnimation()
-    {
-        // Cancel any previous LeanTween animations
         LeanTween.cancel(boy.gameObject);
         LeanTween.cancel(item.gameObject);
         LeanTween.cancel(question.gameObject);
@@ -48,22 +39,8 @@ public class GameUIAnimator : MonoBehaviour
         {
             LeanTween.cancel(optionButtons[i].gameObject);
         }
-        Debug.Log("Prev Cancel");
 
-        // Reset everything to its original position first
-        boy.anchoredPosition = boyFinalPosition;
-        item.anchoredPosition = itemFinalPosition;
-        question.anchoredPosition = questionFinalPosition;
-
-        for (int i = 0; i < optionButtons.Length; i++)
-        {
-            optionButtons[i].anchoredPosition = optionFinalPositions[i];
-        }
-
-        Debug.Log("Reset Original");
-
-
-        // Move everything to starting positions
+        // Starting positions
 
         boy.anchoredPosition =
             new Vector2(900, boyFinalPosition.y);
@@ -80,40 +57,116 @@ public class GameUIAnimator : MonoBehaviour
                 new Vector2(optionFinalPositions[i].x, -600);
         }
 
-        Debug.Log("Starting pos");
-
-
         // Boy from right
-        LeanTween.move(boy, boyFinalPosition, 0.7f)
-            .setEaseOutBack();
 
-        yield return new WaitForSeconds(0.15f);
+        LeanTween.move(
+            boy,
+            boyFinalPosition,
+            0.9f
+        ).setEaseOutBack();
+
+        yield return new WaitForSeconds(0.25f);
 
         // Item from left
-        LeanTween.move(item, itemFinalPosition, 0.7f)
-            .setEaseOutBack();
 
-        yield return new WaitForSeconds(0.15f);
+        LeanTween.move(
+            item,
+            itemFinalPosition,
+            0.9f
+        ).setEaseOutBack();
+
+        yield return new WaitForSeconds(0.25f);
 
         // Question from right
-        LeanTween.move(question, questionFinalPosition, 0.7f)
-            .setEaseOutBack();
 
-        yield return new WaitForSeconds(0.3f);
+        LeanTween.move(
+            question,
+            questionFinalPosition,
+            0.9f
+        ).setEaseOutBack();
+
+        yield return new WaitForSeconds(0.4f);
 
         // Options from bottom
+
         for (int i = 0; i < optionButtons.Length; i++)
         {
             LeanTween.move(
                 optionButtons[i],
                 optionFinalPositions[i],
-                0.5f
+                0.7f
             ).setEaseOutBack();
 
-            yield return new WaitForSeconds(0.12f);
+            yield return new WaitForSeconds(0.2f);
         }
 
-        Debug.Log("Animations");
+        Debug.Log("Enter animation completed");
+    }
 
+    public IEnumerator PlayExitAnimation()
+    {
+        LeanTween.cancel(boy.gameObject);
+        LeanTween.cancel(item.gameObject);
+        LeanTween.cancel(question.gameObject);
+
+        for (int i = 0; i < optionButtons.Length; i++)
+        {
+            LeanTween.cancel(optionButtons[i].gameObject);
+        }
+
+        // Options go down
+
+        for (int i = 0; i < optionButtons.Length; i++)
+        {
+            LeanTween.move(
+                optionButtons[i],
+                new Vector2(
+                    optionFinalPositions[i].x,
+                    -600
+                ),
+                0.6f
+            ).setEaseInBack();
+        }
+
+        yield return new WaitForSeconds(0.25f);
+
+
+        LeanTween.move(
+            question,
+            new Vector2(
+                900,
+                questionFinalPosition.y
+            ),
+            0.7f
+        ).setEaseInBack();
+
+        yield return new WaitForSeconds(0.15f);
+
+        // Item goes left
+
+        LeanTween.move(
+            item,
+            new Vector2(
+                -900,
+                itemFinalPosition.y
+            ),
+            0.7f
+        ).setEaseInBack();
+
+        yield return new WaitForSeconds(0.15f);
+
+
+        LeanTween.move(
+            boy,
+            new Vector2(
+                900,
+                boyFinalPosition.y
+            ),
+            0.7f
+        ).setEaseInBack();
+
+        yield return new WaitForSeconds(0.7f);
+
+        Debug.Log("Exit animation completed");
     }
 }
