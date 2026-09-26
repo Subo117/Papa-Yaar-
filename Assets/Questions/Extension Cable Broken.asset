@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 205d56d76f88bb84996ca22f33c362e0, type: 3}
+  m_Name: Extension Cable Broken
+  m_EditorClassIdentifier: Assembly-CSharp::QuestionData
+  itemImage: {fileID: -7887674827274174608, guid: 3457552c2dfbce64a9da33f924a4e1d7, type: 3}
+  questionText: Papa, extension board ka wire toot gaya!
+  options:
+  - optionText: Buy a new extension board
+    score: 1
+  - optionText: Get the wire repaired
+    score: 3
+  - optionText: Tape it up
+    score: 5

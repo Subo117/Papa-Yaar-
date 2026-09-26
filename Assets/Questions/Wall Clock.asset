@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 205d56d76f88bb84996ca22f33c362e0, type: 3}
+  m_Name: Wall Clock
+  m_EditorClassIdentifier: Assembly-CSharp::QuestionData
+  itemImage: {fileID: 3625948854242097313, guid: f214f737b619a6a4d8a76c4ef1503f5c, type: 3}
+  questionText: Papa, ghadi band ho gayi!
+  options:
+  - optionText: Change the battery
+    score: 3
+  - optionText: Buy a new clock
+    score: 1
+  - optionText: Move the hands yourself
+    score: 5

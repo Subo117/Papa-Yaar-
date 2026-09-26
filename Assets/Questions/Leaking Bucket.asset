@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 205d56d76f88bb84996ca22f33c362e0, type: 3}
+  m_Name: Leaking Bucket
+  m_EditorClassIdentifier: Assembly-CSharp::QuestionData
+  itemImage: {fileID: 3051703195212067268, guid: 44bde2b09a3aaa547b3ce4971e919edc, type: 3}
+  questionText: Papa, balti mein se paani leak ho raha hai!
+  options:
+  - optionText: Seal the hole
+    score: 3
+  - optionText: Buy a new bucket
+    score: 1
+  - optionText: Put another bucket inside it
+    score: 5

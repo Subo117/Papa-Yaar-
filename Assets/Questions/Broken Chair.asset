@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 205d56d76f88bb84996ca22f33c362e0, type: 3}
+  m_Name: Broken Chair
+  m_EditorClassIdentifier: Assembly-CSharp::QuestionData
+  itemImage: {fileID: -8451651078524744081, guid: 1d8e63ec4411e4c4ab0c68f75f768e6c, type: 3}
+  questionText: Papa, chair ka pair toot gaya!
+  options:
+  - optionText: Put a brick under it
+    score: 5
+  - optionText: Fix the leg with screws
+    score: 3
+  - optionText: Buy a new chair
+    score: 1
