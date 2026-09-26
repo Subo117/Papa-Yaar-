@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip buttonClickClip;
+    [SerializeField] private AudioSource bgmSource;
+    [SerializeField] private AudioSource clickSource;
+    [SerializeField] private AudioClip bgmClip;
+    [SerializeField] private AudioClip clickClip;
 
     public static AudioManager Instance { get; private set; }
 
@@ -22,14 +24,17 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        audioSource.clip = buttonClickClip;
+        clickSource.clip = clickClip;
+        bgmSource.clip = bgmClip;
+        bgmSource.loop = true;
+        bgmSource.Play();
     }
 
     
 
     public void PlayAudio()
     {
-        audioSource.Play();
+        clickSource.Play();
     }
 
 }

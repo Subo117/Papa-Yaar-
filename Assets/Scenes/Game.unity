@@ -3734,7 +3734,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 287e63194829c4c439c8ebd673b6f6fe, type: 2}
   - {fileID: 11400000, guid: 02969e406c3b71f48b5ca62849dd504a, type: 2}
   - {fileID: 11400000, guid: d2e22392bc149394b9377d76343e56e3, type: 2}
-  questionsPerGame: 5
+  questionsPerGame: 6
   questionUI: {fileID: 613671467}
 --- !u!1 &165312782174732381
 GameObject:
@@ -3878,8 +3878,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f495228387484444fb8b4303796d2b67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  audioSource: {fileID: 4164534769960951339}
-  buttonClickClip: {fileID: 8300000, guid: b4203692f59bca040a1e9e7f29b029e6, type: 3}
+  bgmSource: {fileID: 0}
+  clickSource: {fileID: 0}
+  bgmClip: {fileID: 0}
+  clickClip: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

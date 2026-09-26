@@ -43,21 +43,22 @@ public class MainMenuAnimator : MonoBehaviour
 
     IEnumerator PlayMenuAnimation()
     {
+        yield return new WaitForSeconds(0.5f);
+
         LeanTween.move(gameName, gameNameFinalPosition, 0.9f).setEaseOutBack();
 
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.5f);
 
         LeanTween.move(boy, boyFinalPosition, 0.9f).setEaseOutBack();
 
-        yield return new WaitForSeconds(0.25f);
-
+        yield return new WaitForSeconds(0.5f);
         LeanTween.move(playButton, playFinalPosition, 0.8f).setEaseOutBack();
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.5f);
 
         LeanTween.move(quitButton, quitFinalPosition, 0.8f).setEaseOutBack();
 
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(0.5f);
 
         StartBreathingAnimation();
     }
@@ -66,6 +67,6 @@ public class MainMenuAnimator : MonoBehaviour
     {
         gameName.localScale = gameNameFinalScale;
 
-        LeanTween.scale(gameName.gameObject, gameNameFinalScale * 1.06f, 1.2f).setEaseInOutSine().setLoopPingPong();
+        LeanTween.scale(gameName.gameObject, gameNameFinalScale * 1.1f, 1.2f).setEaseInOutSine().setLoopPingPong();
     }
 }
